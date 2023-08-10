@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="{{ticket.event.title}}" id="ogTitle">
+    <meta name="description" content="{{ticket.event.detail}}">
+    <meta name="keywords" content="Experience, event, Afrobeat">
+    <meta name="author" content="PPLE APP">
+    <meta property="og:title" content="{{ticket.event.title}}" id="ogTitle">
+    <meta property="og:description" content="{{ticket.event.detail}}" id="ogDescription">
+    <meta property="og:image" content="{{ticket.event.mediaPosition1}}" id="ogImageMetaTag">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    <meta property="og:url" content="https://pple.app">
+    <title>{{ticket.event.title}}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Your HTML content here -->
+</body>
+</html>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">
+          <!-- Your logo image or text goes here -->
+          <a href="https://pple.app/" class="logo-link">
+          <img src="/images/pplelogo1.png" alt="logo1" class="logo-image"/>
+          </a>
+        </div>
+      </div>
+    <div class="main-container">
+        <div class="main-inner-container">
+            <div class="data-container">
+                
+                <div class="contain">
+                <h3>PPLE Experience</h3>
+                <img class="event-image"  alt="" src="{{ticket.event.mediaPosition1}}" >
+                </div>
+                <div class="data-body">
+                    <h3>{{ ticket.event.title }}</h3>
+                    <div class="avatar-body">
+                        
+                        <img class="avatar-image" style="width: 64px; height: 64px; border-radius: 64px;" id="eventAvatar" src="{{ticket.user.avatar}}" alt="">
+    
+                        <div class="avatar-title">
+                            <span>{{ticket.user.firstname }} {{ticket.user.lastname}}</span>
+                           
+                            <span id="eventUsername">@{{ticket.user.username }}</span>
+                        </div>
+                        {{#if ticket.user.isOrganizer}}
+                         <div id="verificationContainer">
+                            <img id="verificationImage" class="verified" src="/images/Organizer.png" alt=""/>
+                          </div>
+                          {{else}}
+                             <!-- Display nothing when user is not verified -->
+                          {{/if}}
+                    </div>
+    
+                    <div class="time-container">
+                        <span>Start Time:</span>
+                        <h3 id="startTime">{{ startDate }}</h3>
+                        <!--<h3>10:00PM May 7</h3> -->
+                    </div>
+                    <div class="experience-container">
+                        <span>Event Details:</span>
+                        <p >{{ticket.event.detail}}</p>
+                    </div>
+                    
+                    <div class="time-container">
+                        <h2>Order Details:</h2>
+                         <h4><strong>Name:</strong>{{ticket.user.firstname }} {{ticket.user.lastname}}</h4>
+                        <h3><strong>Order Reference:</strong>{{ticket.orderRef}}</h3>
+                        <h3><strong>Total Price:</strong> ${{ticket.total}}</h3>
+                        <h3><strong>Total Price:</strong>{{ticket.transDate}}</h3>
+                        <h3><strong>Payment Method:</strong> Card (**** **** **** {{lastFourDigits}})</h3>
+
+                        <h3><strong>Status:</strong>{{ticket.status}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+</body>
+</html>
